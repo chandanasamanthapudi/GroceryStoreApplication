@@ -1,5 +1,7 @@
 package com.meensat.controller;
 
-public class MyController {
+public class UserController {
+	
+	
 
 }

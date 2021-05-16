@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,20 +19,30 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "admin")
-public class Admin {
+@Table(name = "customer")
+public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "username", nullable = false)
-	private String userName;
-	
-	@Column(name = "password", nullable = false)
-	private String password;
-	
+	@Column(name="user_id" , nullable = false )
+	private Long Id;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
+	
+	@Column(name = "phone_number", nullable = false)
+	private Long phoneNumber;
+	
+	@Column(name = "location", nullable = false)
+	private String location;
+	
+	@Column(name = "latitude", nullable = false)
+	private double latitude;
+	
+	@Column(name= "address", nullable= false)
+	private String address;
+	
+	@Column(name = "logitude", nullable = false)
+	private double logitude;
 }
